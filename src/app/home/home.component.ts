@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   onLoadServers() {
-    // router method provided by Router import 
+    // router method provided by Router import
     this.router.navigate(['/servers']);
   }
 
