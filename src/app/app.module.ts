@@ -17,11 +17,13 @@ import { ServersService } from './servers/servers.service';
 // RouterModule includes a forRoot method that accepts the Routes object constant, which could possess any name
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/:id/:name', component: UserComponent },
-  { path: 'servers', component: ServersComponent },
-  { path: 'servers/:id', component: ServersComponent },
-  { path: 'servers/:id/edit', component: EditServerComponent }
+  { path: 'users', component: UsersComponent, children: [
+    { path: ':id/:name', component: UserComponent }
+  ] },
+  { path: 'servers', component: ServersComponent, children: [
+    { path: ':id', component: ServerComponent},
+    { path: ':id/edit', component: EditServerComponent }
+  ] },
 ]
 
 @NgModule({

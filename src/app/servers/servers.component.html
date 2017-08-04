@@ -15,10 +15,12 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+    <!-- NOTE router-outlet adds a hook to load nested child route components -->
+    <router-outlet></router-outlet>
+    <!-- <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <a routerLink="/servers">Reload Page</a>
     <app-edit-server></app-edit-server>
-    <hr>
+    <hr> -->
     <!-- <app-server></app-server> -->
   </div>
 </div>
