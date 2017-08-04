@@ -1,7 +1,12 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
+      <!-- NOTE queryParams is not a new directive; its a bindable property of the router link directive -->
+      <!-- NOTE fragment property is same as above, but uses a hash instead of a question-mark  -->
       <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdit: '1'}"
+        [fragment]="loading"
         href="#"
         class="list-group-item"
         *ngFor="let server of servers">
@@ -14,6 +19,6 @@
     <a routerLink="/servers">Reload Page</a>
     <app-edit-server></app-edit-server>
     <hr>
-    <app-server></app-server>
+    <!-- <app-server></app-server> -->
   </div>
 </div>
