@@ -35,8 +35,10 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: '/not-found', pathMatch: 'full' }
 ]
 
+// useHash default is false
 @NgModule({
   imports: [
+    // RouterModule.forRoot(appRoutes, {useHash: true})
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
