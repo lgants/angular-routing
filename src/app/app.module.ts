@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 // angular can't inject these services unless imported here
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
-
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { AuthGuard } from './auth-guard.service';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [ServersService, AuthService, AuthGuard],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
