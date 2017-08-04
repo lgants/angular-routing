@@ -5,7 +5,7 @@
       <!-- NOTE fragment property is same as above, but uses a hash instead of a question-mark  -->
       <a
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{allowEdit: '1'}"
+        [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
         [fragment]="loading"
         href="#"
         class="list-group-item"
